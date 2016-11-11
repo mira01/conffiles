@@ -136,8 +136,8 @@ nnoremap <C-S> :w<CR>
 "nnoremap <C-Up>    <C-W>w
 "inoremap <C-Down>  <C-O><C-W>W
 "nnoremap <C-Down>  <C-W>W
-vmap cc :s/^/#/<CR>
-vmap cv :s/^#//<CR>
+vmap cc :s/^\(\s*\)/\1#/<CR>
+vmap cv :s/^\(\s*\)#/\1/<CR>
 
 " Basic UI settings
 colorscheme desert
