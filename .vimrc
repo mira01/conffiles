@@ -243,3 +243,10 @@ if &term=="xterm" || &term=="xterm-color"
 endif
 
 :nmap ! i <CR><Esc>
+:command Vb normal <C-v>
+
+"hokusy pokusy
+"inoremap <C-h> <C-o><Left>
+"inoremap <C-j> <C-o><Down>
+"inoremap <C-k> <C-o><Up>
+"inoremap <C-l> <C-o><Right>
