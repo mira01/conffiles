@@ -1,0 +1,56 @@
+#!/bin/bash
+ 
+# store the current dir
+CUR_DIR=$(pwd)
+ 
+# Let the person running the script know what's going on.
+echo -e "\n\033[1mDoing \033[32mgit $@\033[0m for all repositories...\033[0m\n"
+
+
+updating=false
+if [ "xpull" == 'x${@}' ]; then
+    updating=true
+fi
+
+# Find all git repositories and update it to the master latest revision
+for i in $(find . -name ".git" | cut -c 3-); do
+    echo "";
+    echo -en "\033[33m"+$i+"\033[0m: ";
+    #pokud se pouzivaji v gitu submodule, tak v adresari submodule neni .git adresar, ale soubor
+    iIsDir=true
+    if [ -f "$i" ]; then
+        i=`dirname "$i"`
+        iIsDir=false
+    fi
+    
+    # We have to go to the .git parent directory to call the pull command
+    cd "$i";
+    
+    if [ ${updating} == true ]; then
+        if [ $iIsDir == true ]; then
+            cd ..;
+            git pull
+            # pokud tu mam i moduly udelam update
+            if [ -f ".gitmodules" ]; then
+                git submodule update --remote
+            fi
+        else
+            # nic nedelej protoze modul se updatoval sam
+            :
+        fi
+
+    else
+        # jen pokud neupdatujeme submodul, tak se podivame o adresar vys
+        if [ $iIsDir == true ]; then
+            cd ..;
+        fi
+        
+        # finally call
+        git $@;
+    fi
+ 
+    # lets get back to the CUR_DIR
+    cd $CUR_DIR
+done
+ 
+echo -e "\n\033[32mComplete!\033[0m\n"
