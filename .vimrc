@@ -172,7 +172,7 @@ autocmd FileType python map <buffer> <C-p> :call Flake8()<CR>
 " automaticly delete whitespaces on the end of line
 autocmd BufWritePre *.py :%s/\s\+$//e
 " :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
+set t_Co=256
 if &term=="xterm" || &term=="xterm-color"
      set t_Co=8
      set t_Sb=^[4%dm
