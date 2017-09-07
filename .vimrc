@@ -250,3 +250,4 @@ endif
 "inoremap <C-j> <C-o><Down>
 "inoremap <C-k> <C-o><Up>
 "inoremap <C-l> <C-o><Right>
+set colorcolumn=80
