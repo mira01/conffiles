@@ -388,8 +388,11 @@ function parse_git_dirty {
   function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
+function running {
+    jobs | wc -l
+}
 
-declare -x PS1="\[\033[1;33m\]\u\[\033[1;34m\]@\[\033[1;32m\]\h\[\033[1;39m\](\$SHLVL):\[\033[1;37m\]\w\[\033[1;35m\]\$(parse_git_branch)\$\[\033[0;39m\] " 
+declare -x PS1="\[\033[1;33m\]\u\[\033[1;34m\]@\[\033[1;32m\]\h\[\033[1;39m\](\$SHLVL)(\$(running)):\[\033[1;37m\]\w\[\033[1;35m\]\$(parse_git_branch)\$\[\033[0;39m\] " 
 export EDITOR=vim
 export VISUAL=vim 
 
