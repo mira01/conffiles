@@ -84,4 +84,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias py=python
-export PATH=/home/mira/git/mycef/code/depot_tools:$PATH

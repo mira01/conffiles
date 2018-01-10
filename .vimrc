@@ -1,11 +1,9 @@
 " Set nocmaptible mode
 set nocompatible
 
-
 set mouse=a
 "set insertmode
 "set hidden
-
 
 " Searching
 set ignorecase
@@ -116,22 +114,28 @@ behave xterm
 
 " Keybindings (like Windows, Nano, Konqueror, etc.)
 "map <F5> :silent !/opt/local/bin/xterm -e /opt/local/bin/python -i % <CR>
-inoremap <C-T>     <C-O>:tabnew<CR>
-nnoremap <C-T>     :tabnew<CR>
-inoremap <C-Left>  <C-O>:tabprevious<CR>
-nnoremap <C-Left>  :tabprevious<CR>
-inoremap <C-Right> <C-O>:tabnext<CR>
-nnoremap <C-Right> :tabnext<CR>
-inoremap <C-Down>  <C-O>:tabclose<CR>
-nnoremap <C-Down>  :tabclose<CR>
+inoremap <C-T>     <C-O>:tabnew
+nnoremap <C-T>     :tabnew
+
+"inoremap <C-Left>  <C-O>:tabprevious<CR>
+"nnoremap <C-Left>  :tabprevious<CR>
+"inoremap <C-Right> <C-O>:tabnext<CR>
+"nnoremap <C-Right> :tabnext<CR>
+"inoremap <C-Down>  <C-O>:tabclose<CR>
+"nnoremap <C-Down>  :tabclose<CR>
 
 inoremap <C-h>  <C-O>:tabprevious<CR>
 nnoremap <C-h>  :tabprevious<CR>
 inoremap <C-l>  <C-O>:tabnext<CR>
 nnoremap <C-l>  :tabnext<CR>
 
-inoremap <C-S> <C-O>:w<CR>
-nnoremap <C-S> :w<CR>
+inoremap <C-h>  <C-O>:tabprevious<CR>
+nnoremap <C-h>  :tabprevious<CR>
+inoremap <C-l>  <C-O>:tabnext<CR>
+nnoremap <C-l>  :tabnext<CR>
+
+"inoremap <C-S> <C-O>:w<CR>
+"nnoremap <C-S> :w<CR>
 "inoremap <C-Up>    <C-O><C-W>w
 "nnoremap <C-Up>    <C-W>w
 "inoremap <C-Down>  <C-O><C-W>W
@@ -140,7 +144,7 @@ vmap cc :s/^\(\s*\)/\1# /<CR>
 vmap cv :s/^\(\s*\)# /\1/<CR>
 
 " Basic UI settings
-colorscheme desert
+"colorscheme desert
 set history=10000
 set confirm
 set ruler
@@ -250,4 +254,5 @@ endif
 "inoremap <C-j> <C-o><Down>
 "inoremap <C-k> <C-o><Up>
 "inoremap <C-l> <C-o><Right>
+"
 set colorcolumn=80
