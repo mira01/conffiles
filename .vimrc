@@ -248,6 +248,7 @@ endif
 
 :nmap ! i <CR><Esc>
 :command Vb normal <C-v>
+:nmap Y y$
 
 "hokusy pokusy
 "inoremap <C-h> <C-o><Left>
