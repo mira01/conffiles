@@ -34,6 +34,10 @@ set backupdir=~/.swp
 filetype plugin indent on
 syntax on
 
+" Highlight whitespace at EOL
+:highlight ExtraWhitespace ctermbg=red
+:match ExtraWhitespace /\s\+$/
+
 " Highlight current line
 highlight cursorline cterm=none ctermbg=black gui=none guibg=grey30
 highlight Comment ctermfg=green guifg=green
