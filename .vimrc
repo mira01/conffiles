@@ -249,11 +249,6 @@ endif
 :nmap ! i <CR><Esc>
 :command Vb normal <C-v>
 :nmap Y y$
-
-"hokusy pokusy
-"inoremap <C-h> <C-o><Left>
-"inoremap <C-j> <C-o><Down>
-"inoremap <C-k> <C-o><Up>
-"inoremap <C-l> <C-o><Right>
-"
-set colorcolumn=80
+" unnamed register communicates with system clipboard
+set clipboard=unnamed
+set colorcolumn=120
