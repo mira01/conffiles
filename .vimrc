@@ -1,6 +1,7 @@
 " Set nocmaptible mode
 set nocompatible
 
+" Mouse settings
 set mouse=a
 "set insertmode
 "set hidden
@@ -24,7 +25,7 @@ set shiftwidth=4
 set fenc=utf-8
 set backspace=2
 
-" other
+" Directories
 " swap soubory ukladame do ~/.swp
 set dir=~/.swp
 set directory=~/.swp
@@ -33,10 +34,13 @@ set backupdir=~/.swp
 " Filetype detection and syntax highlighting
 filetype plugin indent on
 syntax on
+:set mps+=<:>
 
 " Highlight whitespace at EOL
-:highlight ExtraWhitespace ctermbg=red
-:match ExtraWhitespace /\s\+$/
+:highlight ExtraWhitespace ctermbg=red ctermfg=black
+:call matchadd('ExtraWhitespace', '\v\s+$')
+" Highlight multiple whitespaces
+:call matchadd('ExtraWhitespace', '\v\S\s\s+\S')
 
 " Highlight current line
 highlight cursorline cterm=none ctermbg=black gui=none guibg=grey30
@@ -250,9 +254,13 @@ if &term=="xterm" || &term=="xterm-color"
      :nmap <Esc>OS -
 endif
 
-:nmap ! i <CR><Esc>
+:nmap ! i<CR><Esc>
 :command Vb normal <C-v>
 :nmap Y y$
+" remaped to avoid mistyping ~~/ZZ
+:noremap ZZ <Esc>
 " unnamed register communicates with system clipboard
 set clipboard=unnamed
+" set clipboard=
 set colorcolumn=120
+set timeoutlen=100
