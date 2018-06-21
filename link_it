@@ -2,3 +2,4 @@
 #ln -s .bash_profile ~/.bash_profile
 ln -s .vimrc ~/.vimrc
 ln -s .tmux.conf ~/.tmux.conf
+ln -s mira-simple.zsh-theme ~/.oh-my-zsh/themes/mira-simple.zsh-theme
