@@ -1,0 +1,14 @@
+# Oh-my-ZSH
+yum install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+mv ~/.zshrc ~/.zshrc_orig
+
+# vim pathogen
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# git
+git config --global alias.ff 'pull --ff-only'
+git config --global alias.st 'status'
+git config --global alias.co 'checkout'
+git config --global alias.ci 'commit'
