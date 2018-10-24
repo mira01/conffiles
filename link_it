@@ -2,5 +2,6 @@
 #ln -s .bash_profile ~/.bash_profile
 ln -s `pwd`/.zshrc ~/.zshrc
 ln -s `pwd`/.vimrc ~/.vimrc
+mkdir -p ~/.swp
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
-ln -s `pwd`/.mira-simple.zsh-theme ~/.oh-my-zsh/themes/mira-simple.zsh-theme
+ln -s `pwd`/mira-simple.zsh-theme ~/.oh-my-zsh/themes/mira-simple.zsh-theme

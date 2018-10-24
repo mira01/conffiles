@@ -1,4 +1,4 @@
-PROMPT='%? %n %{$fg[green]%}%~%{$fg_bold[blue]%}$(git_prompt_info) (${SHLVL}/$(running))%{$reset_color%} '
+PROMPT='%? %n %{$fg[yellow]%}%~%{$fg_bold[blue]%}$(git_prompt_info) (${SHLVL}/$(running))%{$reset_color%} '
 #RPROMPT='%t'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="("
