@@ -107,6 +107,11 @@ autocmd FileType python     vnoremap <C-D> :call ToggleComment('# ', '')<CR>
 autocmd FileType sh         vnoremap <C-D> :call ToggleComment('# ', '')<CR>
 autocmd FileType html       vnoremap <C-D> :call ToggleComment('<!-- ', ' -->')<CR>
 
+autocmd Filetype erlang     let @l = 'mlyiwo?DEBUG("miradebug", [{module, ?MODULE},{function, ?FUNCTION_NAME},{"pa", pa}]),`l'
+autocmd Filetype erlang     let @i = 'mcyiwoio:format("pa: ~p~n", [pA]),`c'
+
+autocmd Filetype rust       let @i = 'mcyiwoprintln!("pa: {:?}", pA);`c'
+
 " (Un)indent selection
 function! Indenter(IndentChar)
     normal gv
@@ -162,7 +167,7 @@ set wrapscan
 set linebreak
 set showbreak=+++
 set wildmenu
-set wildmode=full
+set wildmode=longest,full
 set showmatch
 set background=dark
 set tabpagemax=50
