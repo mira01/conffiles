@@ -89,3 +89,6 @@ function running() {
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias py=python
 alias vim='vim -p'
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export PATH="~/PATH:$PATH"

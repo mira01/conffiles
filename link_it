@@ -5,3 +5,10 @@ ln -s `pwd`/.vimrc ~/.vimrc
 mkdir -p ~/.swp
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
 ln -s `pwd`/mira-simple.zsh-theme ~/.oh-my-zsh/themes/mira-simple.zsh-theme
+ln -s `pwd`/PATH ~/PATH
+
+echo 'cfg_rpm_vertica_version_el7: "%{hiera('vertica9_latest')}"
+cfg_rpm_gdc_vertica_udx_gdccsvparser_version_el7: "%{hiera('vertica9_udx_latest')}"
+cfg_rpm_gdc_vertica_udx_filters_version_el7: "%{hiera('vertica9_udx_latest')}"
+cfg_rpm_gdc_vertica_udx_hll_version_el7: "%{hiera('vertica9_udx_hll_latest')}"
+cfg_rpm_vertica_odbc_version_el7: "%{hiera('vertica9_latest')}"' >> /etc/puppet/hieradata/node/`hostname -f`.yaml

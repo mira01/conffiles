@@ -1,0 +1,11 @@
+set -euo pipefail
+repo_name=$1;
+
+folder_name=gdc-${repo_name#"gdc-"}
+mkdir ${folder_name}
+cd ${folder_name}
+git init
+git remote add gdc git@github.com:gooddata/${repo_name}.git
+git remote add mira git@github.com:mira01/${repo_name}.git
+git fetch gdc
+git checkout -b develop --track gdc/develop
