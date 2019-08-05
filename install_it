@@ -16,4 +16,4 @@ git config --global alias.rb 'rebase'
 git config --global user.name "Miroslav Čech"
 
 # tldr
-yum install tldr
+pip install tldr
