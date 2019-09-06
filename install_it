@@ -13,6 +13,7 @@ git config --global alias.st 'status'
 git config --global alias.co 'checkout'
 git config --global alias.ci 'commit'
 git config --global alias.rb 'rebase'
+git config --global alias.rbcont 'rebase --continue'
 git config --global user.name "Miroslav Čech"
 
 # tldr
