@@ -36,6 +36,10 @@ filetype plugin indent on
 syntax on
 :set mps+=<:>
 
+" fix lags (caused by finding matching pairs)
+let g:matchparen_timeout = 20
+let g:matchparen_insert_timeout = 20
+
 " Highlight whitespace at EOL
 :highlight ExtraWhitespace ctermbg=red ctermfg=black
 :call matchadd('ExtraWhitespace', '\v\s+$')
