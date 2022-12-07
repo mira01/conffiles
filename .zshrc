@@ -1,12 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-export ZSH=/root/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+export ZSH=/Users/mira/.oh-my-zsh
 ZSH_THEME="mira-simple"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -42,7 +35,7 @@ ZSH_THEME="mira-simple"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -51,7 +44,7 @@ ZSH_THEME="mira-simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,6 +69,12 @@ function running() {
     jobs | wc -l | xargs echo;
 }
 
+#KERL_CONFIGURE_OPTIONS="--with-ssl=/usr/local/opt/openssl@3 --without-javac" kerl build 25rc3
+#ERL_TOP="/Users/mira/erlang-otp/25.0-rc3"
+ERL_TOP="/Users/mira/erlang-otp/23.3.4.15"
+ERL_BIN="${ERL_TOP}/bin"
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -88,7 +87,17 @@ function running() {
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias py=python
-alias vim='vim -p'
+alias vim=nvim
+alias vimdiff='nvim -d'
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export PATH="~/PATH:$PATH"
+export PATH="$ERL_BIN:/Users/mira/PATH:$PATH"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+source ~/.superbet
+source <(kubectl completion zsh)
